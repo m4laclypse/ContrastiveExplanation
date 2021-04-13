@@ -180,8 +180,9 @@ class FactFoilRegression(FactFoil):
 
     def encode(self, ys):
         """Encode target variable into fact (0) and foil (1)."""
+        print("ys = ", ys)
         if str(self.foil).startswith('less'):
-            return (ys < (self.fact - self.epsilon)) * 1
+            return (ys < (self.fact - self.epsilon)) * 500
         elif str(self.foil).startswith('more'):
-            return (ys > (self.fact + self.epsilon)) * 1
+            return (ys > (self.fact + self.epsilon)) * 500
         raise NotImplementedError('TODO: Regression')
